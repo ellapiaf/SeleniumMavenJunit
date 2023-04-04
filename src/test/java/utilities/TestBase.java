@@ -12,7 +12,8 @@ import org.openqa.selenium.support.ui.Select;
 import java.time.Duration;
 
 public class TestBase {
-    //TestBase class'ından Obje oluşturmanın önüne geçilmesi için abstract yapılabilir
+
+    //TestBase class'ından Obje oluşturmanın önüne geçilmesi için abstract yapılabilir.
     //Orn: TestBase base = new TestBase()
     //Bu class'a extends ettiğimiz test classlarından ulaşabiliriz
     protected static WebDriver driver;
@@ -26,8 +27,8 @@ public class TestBase {
 
     @After
     public void tearDown() throws Exception {
-//        bekle(3);
-//        driver.quit();
+        bekle(3);
+        driver.quit();
     }
     //HARD WAIT METHOD
     public static void bekle(int saniye){
@@ -60,7 +61,7 @@ public class TestBase {
 
         //ddmVisibleText(gun,"7"); --> Yukarıdaki kullanım yerine sadece method ile handle edebilirim
      */
-    public static void ddmVisibleText(WebElement ddm, String secenek){
+    public static void ddmVisibleText(WebElement ddm,String secenek){
         Select select = new Select(ddm);
         select.selectByVisibleText(secenek);
     }
@@ -74,4 +75,5 @@ public class TestBase {
         Select select = new Select(ddm);
         select.selectByValue(secenek);
     }
+
 }

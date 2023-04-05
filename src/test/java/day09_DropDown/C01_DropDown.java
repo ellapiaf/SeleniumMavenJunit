@@ -8,6 +8,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.support.ui.Select;
 
 import java.time.Duration;
 import java.util.List;
@@ -54,15 +55,22 @@ public class C01_DropDown {
          */
         //a. Tüm eyalet isimlerini yazdıralım
 
-        List<WebElement> tumEyaletler = driver.findElements(By.xpath("//*[@id='state']//option"));
-        System.out.println(tumEyaletler.get(2).getText());
-        System.out.println("*****************************");
-        tumEyaletler.forEach(t-> System.out.println(t.getText()));
-        //b. Sayfadaki tüm ddm lerdeki tüm seçenekleri(option) konsolda yazdırınız
-        System.out.println("******************************");
-        List<WebElement> eyaletlerList = driver.findElements(By.tagName("select"));
-        eyaletlerList.forEach(t-> System.out.println(t.getText()));
-        System.out.println("*******************************");
-        System.out.println(tumEyaletler.size());
+//        List<WebElement> tumEyaletler = driver.findElements(By.xpath("//*[@id='state']//option"));
+//        System.out.println(tumEyaletler.get(2).getText());
+//        System.out.println("*****************************");
+//        tumEyaletler.forEach(t-> System.out.println(t.getText()));
+//        //b. Sayfadaki tüm ddm lerdeki tüm seçenekleri(option) konsolda yazdırınız
+//        System.out.println("******************************");
+//        List<WebElement> eyaletlerList = driver.findElements(By.tagName("select"));
+//        eyaletlerList.forEach(t-> System.out.println(t.getText()));
+//        System.out.println("*******************************");
+//        System.out.println(tumEyaletler.size());
+
+        WebElement state=driver.findElement(
+                By.id
+                        ("state"));
+        Select select=new Select(state);
+        List<WebElement> tümstate= select.getOptions();
+        tümstate.forEach(t-> System.out.println(t.getText()));
     }
 }

@@ -20,6 +20,7 @@ public class C01_ExcelRead extends TestBase {
             Kullanılan satır sayısın bulun
             Ülke-Başkent şeklinde verileri yazdırın
         */
+
         //Excel dosyasından bir veri okuyabilmemiz için;
         //1-Dosya yolunu alırız
         String dosyaYolu = "src/test/java/resourses/Capitals (2).xlsx";

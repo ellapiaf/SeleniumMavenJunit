@@ -22,7 +22,7 @@ public class TestBase {
     @Before
     public void setUp() throws Exception {
         WebDriverManager.chromedriver().setup();
-        driver = new ChromeDriver(new ChromeOptions().addArguments("--remote-allow-origins=*"));
+        driver = new ChromeDriver();
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(15));
     }
@@ -30,7 +30,7 @@ public class TestBase {
     @After
     public void tearDown() throws Exception {
         bekle(3);
-        driver.quit();
+//        driver.quit();
     }
     //HARD WAIT METHOD
     public static void bekle(int saniye){
